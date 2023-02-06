@@ -52,7 +52,7 @@ I have decided to use [Mocki.io API](https://mocki.io/fake-json-api) to mock giv
 * Architecture
   * MVVM Architecture (View- ViewModel - Model)
   * Repository pattern
-* [Glide](https://github.com/bumptech/glide) - loading images.
+* [Picasso]([https://github.com/bumptech/glide](https://github.com/square/picasso)) - loading images.
 * [Retrofit2 & OkHttp3](https://github.com/square/retrofit) - construct the REST APIs and fetch data from network.
 * mockito-test library
 
