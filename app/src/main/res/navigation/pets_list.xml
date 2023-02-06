@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/list"
+    app:startDestination="@+id/petslist">
+
+    <fragment
+        android:id="@+id/petslist"
+        android:name="com.my.sapiaassignment.uilayer.petslist.PetsListFragment"
+        android:label="@string/pets_list"
+        tools:layout="@layout/fragment_petslist">
+        <action
+            android:id="@+id/action_petslist_to_petdetail"
+            app:destination="@id/petdetail" />
+<!--        <action-->
+<!--            android:id="@+id/action_petslist_to_alert_dialog"-->
+<!--            app:destination="@id/alertdialog" />-->
+    </fragment>
+    <fragment
+        android:id="@+id/petdetail"
+        android:name="com.my.sapiaassignment.uilayer.petdetail.PetDetailFragment"
+        android:label="@string/pet_detail"
+        tools:layout="@layout/fragment_pet_detail">
+        <argument
+            android:name="petContentUrl"
+            app:argType="string" />
+    </fragment>
+
+<!--    <fragment-->
+<!--        android:id="@+id/alertdialog"-->
+<!--        android:name="com.my.sapiaassignment.uilayer.petslist.DialogFragment"-->
+<!--        android:label="@string/alert_dialog"-->
+<!--        tools:layout="@layout/fragment_dialog">-->
+<!--    </fragment>-->
+</navigation>

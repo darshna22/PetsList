@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+apply from: '../dependencies.gradle'
+
+android {
+    namespace 'com.my.sapiaassignment'
+    compileSdk versions.compileSdk
+
+    defaultConfig {
+        applicationId "com.my.sapiaassignment"
+        minSdk versions.minSdk
+        targetSdk versions.compileSdk
+        versionCode versions.versionCode
+        versionName versions.versionName
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = versions.jvmTargetVersion
+    }
+
+    sourceSets {
+        test {
+            resources {
+                srcDirs 'src\\test\\assets'
+            }
+        }
+    }
+}
+
+dependencies {
+
+    implementation deps.coreKtxVersion
+    implementation deps.appcompatVersion
+    implementation deps.materialVersion
+    implementation deps.constraintlayoutVersion
+
+    //picasso and dot library
+    implementation deps.picassoVersion
+
+    //dagger
+    implementation deps.daggerVersion
+    implementation 'androidx.test.ext:junit-ktx:1.1.5'
+    kapt 'com.google.dagger:dagger-compiler:2.11'
+    compileOnly 'javax.annotation:jsr250-api:1.0'
+
+    //coroutines
+    implementation deps.coroutinesCoreVersion
+    implementation deps.coroutinesAndroidVersion
+
+    //view model
+    implementation deps.coroutviewmodelKtxVersion
+
+    //retrofit
+    implementation deps.retrofitVersion
+    implementation deps.retrofitGsonVersion
+
+    //navigation
+    implementation deps.navigationVersion
+
+    //test libraries
+    testImplementation deps.kotlin_mockito
+    testImplementation deps.archCoreTestVersion
+    testImplementation deps.coroutinesTestVersion
+    testImplementation deps.mockWebserverVersion
+}
